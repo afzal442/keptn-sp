@@ -4,33 +4,6 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.je-deployment.triggered
-      requests:
-        - url: https://api.pagerduty.com/incidents
-          payload: >-
-            {  "incident": {    "type": "incident",    "title": "The server memory is full",    "service": {      "id": {{.env.secret_fruio_Fruiosvc}},      "type": "service_reference"    },    "priority": {      "id": "P53ZZH5",      "type": "priority_reference"    },    "urgency": "high",    "incident_key": "92877d39e483490ac09a20101967e88e",    "body": {      "type": "incident_body",      "details": "A disk is getting full on this machine. You should investigate what is causing the disk to fill, and ensure that there is an automated process in place for ensuring data is rotated (eg. logs should have logrotate around them). If data is expected to stay on this disk forever, you should start planning to scale up to a larger disk."    },    "escalation_policy": {      "id": "PNJ2H9R",      "type": "escalation_policy_reference"    }  }}
-          headers:
-            - name: Accept
-              value: application/vnd.pagerduty+json
-            - name: Authorization
-              value: "{{.env.secret_pgtoken_token}}"
-            - name: Content-Type
-              value: application/json
-            - name: From
-              value: b113053@iiit-bh.ac.in
-          method: POST
-      envFrom:
-        - name: secret_fruio_Fruiosvc
-          secretRef:
-            name: fruio
-            key: Fruio-svc
-        - name: secret_pgtoken_token
-          secretRef:
-            name: pg-token
-            key: token
-      subscriptionID: a77efb33-4fd5-41ad-91d0-e72cc693891f
-      sendFinished: true
-      sendStarted: true
     - type: sh.keptn.event.je-deployment.finished
       requests:
         - url: https://events.pagerduty.com/v2/enqueue
