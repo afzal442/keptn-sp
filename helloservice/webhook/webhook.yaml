@@ -1,0 +1,18 @@
+apiVersion: webhookconfig.keptn.sh/v1beta1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.je-deployment.triggered
+      requests:
+        - url: https://events.pagerduty.com/v2/enqueue
+          payload: >-
+            {"payload":{"summary":"My Test 5","severity":"error","source":"sh.keptn.triggered.event"},"routing_key":"92877d39e483490ac09a20101967e88e","dedup_key":"srv01/mysql","event_action":"trigger","client":"Sample Monitoring Service","client_url":"https://datadog.service.com"}
+          headers:
+            - name: Content-Type
+              value: application/json
+          method: POST
+      subscriptionID: 6cc0e06a-c561-4065-a937-d6417ad854a4
+      sendFinished: true
+      sendStarted: true
