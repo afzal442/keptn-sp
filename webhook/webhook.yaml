@@ -1,0 +1,23 @@
+apiVersion: webhookconfig.keptn.sh/v1beta1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.je-test.triggered
+      requests:
+        - url: https://keptn-sp.atlassian.net/rest/api/3/events
+          payload: ""
+          headers:
+            - name: Accept
+              value: application/json
+            - name: xaror79553@lodores.com
+              value: 0Y2elLSCdWJ7OlPXNHaY883C
+            - name: ""
+              value: application/json
+            - name: ""
+              value: jaMlp87hGKyjwENKlAlkFC15
+          method: GET
+      subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
+      sendFinished: true
+      sendStarted: true
