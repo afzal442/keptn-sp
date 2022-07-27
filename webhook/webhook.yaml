@@ -9,9 +9,9 @@ spec:
         - url: https://keptn-sp.atlassian.net/rest/api/3/events
           payload: ""
           headers:
-            - name: Accept
+            - key: Accept
               value: application/json
-            - name: xaror79553@lodores.com
+            - key: xaror79553@lodores.com
               value: "{{.env.secret_jiraapi_token}}"
           method: GET
       envFrom:
