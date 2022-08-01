@@ -28,9 +28,7 @@ spec:
           payload: >-
             {  "payload": {    "summary": "My Test dg1",    "severity": "info",    "source": "sh.keptn.triggered.event"  },  "routing_key": {{.env.secret_webinfra_WebInfraSvc}},  "dedup_key": "dtg/svc",  "event_action": "trigger",  "client": "Sample Monitoring Service",  "client_url": "https://datadog.service.com"}
           headers:
-            - name: Content-Type
-              value: application/json
-            - name: Content-Type
+            - key: Content-Type
               value: application/json
           method: POST
       envFrom:
