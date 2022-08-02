@@ -11,6 +11,7 @@ spec:
           headers:
             - key: Accept
               value: application/json
+          user:
             - key: xaror79553@lodores.com
               value: "{{.env.secret_jiraapi_token}}"
           method: GET
