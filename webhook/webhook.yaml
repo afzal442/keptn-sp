@@ -29,7 +29,7 @@ spec:
           payload: >-
             {"payload":{"summary":"My Test dg1","severity":"info","source":"sh.keptn.triggered.event"},"routing_key":"92877d39e483490ac09a20101967e88e","dedup_key":"dtg/svc","event_action":"trigger","client":"Sample Monitoring Service","client_url":"https://datadog.service.com"}
           headers:
-            - name: Content-Type
+            - key: Content-Type
               value: application/json
           method: POST
       subscriptionID: fda577cf-f13d-4732-bf91-7c07c2f08b4d
