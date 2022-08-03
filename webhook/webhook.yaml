@@ -21,11 +21,9 @@ spec:
         - url: https://keptn-sp.atlassian.net/rest/api/3/events
           payload: ""
           headers:
-            - name: Accept
-              value: application/json
-            - name: Authorization
+            - key: Authorization
               value: Basic eGFyb3I3OTU1M0Bsb2RvcmVzLmNvbTpoaGppaWVBZnJ6cXVMeGtwS2djVTU4Rjc=
-            - name: Accept
+            - key: Accept
               value: application/json
           method: GET
       subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
