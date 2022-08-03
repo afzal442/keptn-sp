@@ -4,25 +4,6 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.je-test.finished
-      requests:
-        - url: https://keptn-sp.atlassian.net/rest/api/3/events
-          payload: ""
-          headers:
-            - key: Accept
-              value: application/json
-          user:
-            - key: xaror79553@lodores.com
-              value: "{{.env.secret_jiraapi_token}}"
-          method: GET
-      envFrom:
-        - name: secret_jiraapi_token
-          secretRef:
-            name: jira-api
-            key: token
-      subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
-      sendFinished: true
-      sendStarted: true
     - type: sh.keptn.event.je-deployment.triggered
       requests:
         - url: https://events.pagerduty.com/v2/enqueue
