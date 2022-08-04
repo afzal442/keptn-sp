@@ -1,4 +1,4 @@
-apiVersion: "spec.keptn.sh/0.2.2"
+apiVersion: "spec.keptn.sh/0.2.3"
 kind: "Shipyard"
 metadata:
   name: "shipyard-delivery"
@@ -8,8 +8,8 @@ spec:
       sequences:
         - name: "delivery"
           tasks:
-            - name: "je-deployment"
-            - name: "je-test"
+            - name: "deployment"
+            - name: "test"
 
     - name: "production"
       sequences:
@@ -17,4 +17,4 @@ spec:
           triggeredOn:
             - event: "qa.delivery.finished"
           tasks:
-            - name: "je-deployment"
+            - name: "deployment"
