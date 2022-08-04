@@ -16,7 +16,7 @@ spec:
       subscriptionID: fda577cf-f13d-4732-bf91-7c07c2f08b4d
       sendFinished: false
       sendStarted: true
-    - type: sh.keptn.event.je-test.finished
+    - type: sh.keptn.event.je-test.trigerred
       requests:
         - url: https://keptn-sp.atlassian.net/rest/api/3/events
           payload: ""
