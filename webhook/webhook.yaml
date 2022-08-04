@@ -16,3 +16,21 @@ spec:
       subscriptionID: fda577cf-f13d-4732-bf91-7c07c2f08b4d
       sendFinished: true
       sendStarted: true
+    - type: sh.keptn.event.test.triggered
+      requests:
+        - url: https://keptn-sp.atlassian.net/rest/api/3/events
+          payload: ""
+          headers:
+            - key: Authorization
+              value: Basic {{.env.secret_jirarestapi_Token}}
+            - key: Accept
+              value: application/json
+          method: GET
+      envFrom:
+        - name: secret_jirarestapi_Token
+          secretRef:
+            name: jira-rest-api
+            key: Token
+      subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
+      sendFinished: true
+      sendStarted: true
