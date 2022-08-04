@@ -22,3 +22,15 @@ spec:
       subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
       sendFinished: true
       sendStarted: true
+    - type: sh.keptn.event.deployment.triggered
+      requests:
+        - url: https://events.pagerduty.com/v2/enqueue
+          payload: >-
+            {"payload":{"summary":"My Test dg1","severity":"info","source":"sh.keptn.deploy.triggered"},"routing_key":"92877d39e483490ac09a20101967e88e","dedup_key":"dtg/svc","event_action":"trigger","client":"Sample Monitoring Service","client_url":"https://datadog.service.com"}
+          headers:
+            - key: Content-Type
+              value: application/json
+          method: POST
+      subscriptionID: fda577cf-f13d-4732-bf91-7c07c2f08b4d
+      sendFinished: true
+      sendStarted: true
