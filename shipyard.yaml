@@ -5,6 +5,8 @@ metadata:
 spec:
   stages:
     - name: "qa"
+      deployment_strategy: "direct"
+      test_strategy: "functional"
       sequences:
         - name: "delivery"
           tasks:
@@ -12,9 +14,11 @@ spec:
             - name: "test"
 
     - name: "production"
+      deployment_strategy: "blue_green_service"
       sequences:
         - name: "delivery"
           triggeredOn:
             - event: "qa.delivery.finished"
           tasks:
             - name: "deployment"
+
