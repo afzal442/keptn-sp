@@ -2,7 +2,7 @@ apiVersion: v2
 actions:
   - name: "Deploy using helm"
     events:
-      - name: "sh.keptn.event.je-deployment.triggered"
+      - name: "sh.keptn.event.deployment.triggered"
     tasks:
       - name: "Run helm"
         files:
@@ -18,7 +18,7 @@ actions:
 
   - name: "Run tests using locust"
     events:
-      - name: "sh.keptn.event.je-test.triggered"
+      - name: "sh.keptn.event.test.triggered"
     tasks:
       - name: "Run locust"
         files:
