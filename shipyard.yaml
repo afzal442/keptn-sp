@@ -18,12 +18,12 @@ spec:
               properties:
                 timeframe: "2m"
             - name: "release"
-        - name: "delivery-direct"
-          tasks:
-            - name: "deployment"
+#         - name: "delivery-direct"
+#           tasks:
+#             - name: "deployment"
 #               properties:
 #                 deploymentstrategy: "direct"
-            - name: "release"
+#             - name: "release"
 
     - name: "production"
       sequences:
