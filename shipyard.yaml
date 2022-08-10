@@ -9,18 +9,18 @@ spec:
         - name: "delivery"
           tasks:
             - name: "deployment"
-              properties:
-                deploymentstrategy: "direct"
+#               properties:
+#                 deploymentstrategy: "direct"
             - name: "test"
-              properties:
-                teststrategy: "functional"
+#               properties:
+#                 teststrategy: "functional"
             - name: "evaluation"
             - name: "release"
         - name: "delivery-direct"
           tasks:
             - name: "deployment"
-              properties:
-                deploymentstrategy: "direct"
+#               properties:
+#                 deploymentstrategy: "direct"
             - name: "release"
 
     - name: "production"
@@ -29,5 +29,9 @@ spec:
           triggeredOn:
             - event: "qa.delivery.finished"
           tasks:
+            - name: "approval"
+              properties:
+                pass: "manual"
+                warning: "manual"
             - name: "deployment"
 
