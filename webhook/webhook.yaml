@@ -4,27 +4,6 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.approval.finished
-      requests:
-        - url: https://keptn-sp.atlassian.net/rest/api/3/issue
-          payload: >-
-            {"fields":{"summary":"Testing failure {{.data.result}}","parent":{"key":"OPP6-2"},"issuetype":{"id":"10009"},"project":{"id":"10004"},"description":{"type":"doc","version":1,"content":[{"type":"paragraph","content":[{"text":"Testing delivery fails when passing through.","type":"text"}]}]},"reporter":{"id":"62d581b283067f68f84fe736"},"labels":["bugfix","blitz_test"]}}
-          headers:
-            - key: Accept
-              value: application/json
-            - key: Content-Type
-              value: application/json
-            - key: Authorization
-              value: Basic {{.env.secret_jirarestapi_Token}}
-          method: POST
-      envFrom:
-        - name: secret_jirarestapi_Token
-          secretRef:
-            name: jira-rest-api
-            key: Token
-      subscriptionID: f719242b-f6c9-41a1-a2f0-c59ad4b39279
-      sendFinished: true
-      sendStarted: true
     - type: sh.keptn.event.evaluation.finished
       requests:
         - url: https://events.pagerduty.com/v2/enqueue
