@@ -4,9 +4,9 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.evaluation.triggered
+    - type: sh.keptn.event.evaluation.finished
       requests:
-        - url: https://events.pagerduty.com/v2/enqueue
+        - url: https://events.pagerduty.com/v2/enqueue/kl
           payload: >-
             {"payload":{"summary":"My Test dg1","severity":"info","source":"sh.keptn.deploy.triggered"},"routing_key":"92877d39e483490ac09a20101967e88e","dedup_key":"datadog/svc","event_action":"trigger","client":"Sample Monitoring Service","client_url":"https://datadog.service.com"}
           headers:
@@ -28,7 +28,7 @@ spec:
               value: application/json
             - key: Authorization
               value: Basic {{.env.secret_jirarestapi_Token}}
-          method: POST
+          method: GET
       envFrom:
         - name: secret_jirarestapi_Token
           secretRef:
