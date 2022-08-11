@@ -33,7 +33,7 @@ spec:
           tasks:
             - name: "approval"
               properties:
-                pass: "automatic"
+                pass: "manual"
                 warning: "manual"
             - name: "deployment"
 
