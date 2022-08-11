@@ -17,7 +17,7 @@ spec:
             - name: "evaluation"
               properties:
                 timeframe: "2m"
-            - name: "release"
+#             - name: "release"
 #         - name: "delivery-direct"
 #           tasks:
 #             - name: "deployment"
